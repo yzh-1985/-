@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>任意三角形</title>
+        <script>
+            function calculateArea() {
+                // 获取用户输入的边长和对角线长度
+                var a = parseFloat(document.getElementById('sideA').value);
+                var b = parseFloat(document.getElementById('sideB').value);
+                var c = parseFloat(document.getElementById('sideC').value);
+
+                // 计算半周长
+                var p1 = (a + b + c) / 2;
+
+                // 计算四个三角形的面积
+                var area1 = Math.sqrt(p1 * (p1 - a) * (p1 - b) * (p1 - c));
+
+                // 计算总面积
+                var totalArea = area1;
+
+                // 显示结果
+                document.getElementById('result').innerText = totalArea.toFixed(2) + "平方米";
+            }
+
+        </script>
+</head>
+
+<body style="max-width:760px; 
+      margin:30px auto;text-align:center;
+            ">
+    <div>
+        <h2>任意三角形面积</h2>
+        <img src="002.png" alt="任意三角形" width="200px" height="150" /><br><br>
+
+        <label for="sideA">边长 A:</label>
+        <input type="number" id="sideA" step="any"><br><br>
+
+        <label for="sideB">边长 B:</label>
+        <input type="number" id="sideB" step="any"><br><br>
+
+        <label for="sideC">边长 C:</label>
+        <input type="number" id="sideC" step="any"><br><br>
+
+        <button onclick="calculateArea()">计算面积</button>
+
+        <p id="result"></p><br><br>
+    </div>
+    <div>
+        <a href="index.html">返回主页面
+    </div>
+
+</body>
+
+</html>
