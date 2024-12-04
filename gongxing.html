@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弓形面积</title>
+    <script>
+        function calculateArea() {
+            // 获取用户输入的边长
+            var c = parseFloat(document.getElementById('sidec').value);
+            var L = parseFloat(document.getElementById('sideL').value);
+            var h = parseFloat(document.getElementById('sideh').value);
+
+            //计算半径
+            var r = (c**2+4*h**2)/(8*h)
+
+            // 计算弓形的面积
+            var ArchArea = (r*(L-c)+c*h)/2
+
+            // 显示结果
+            document.getElementById('result').innerText = ArchArea.toFixed(2) + "平方米";
+
+        }
+    </script>
+</head>
+
+<body style="max-width:760px; 
+      margin:30px auto;text-align:center;
+            ">
+    <div>
+        <h2>弓形面积</h2>
+        <img src="003.png" alt="弓形面积" width="200px" height="150" /><br><br>
+
+        <label for="sidec">弦长 c:</label>
+        <input type="number" id="sidec" step="any"><br><br>
+
+        <label for="sideL">弧长 L:</label>
+        <input type="number" id="sideL" step="any"><br><br>
+
+        <label for="sideh">高度 h:</label>
+        <input type="number" id="sideh" step="any"><br><br>
+
+        <button onclick="calculateArea()">计算面积</button>
+
+        <p id="result"></p><br><br>
+    </div>
+    <div>
+        <a href="index.html">返回主页面
+    </div>
+
+</body>
+
+</html>
